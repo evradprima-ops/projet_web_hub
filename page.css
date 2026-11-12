@@ -1,0 +1,36 @@
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#111;
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:5px;
+    background:linear-gradient(
+        90deg,
+        red,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        magenta,
+        red
+    );
+    background-size:300% 300%;
+    animation:ledMove 4s linear infinite;
+    z-index:-1;
+}
+
+@keyframes ledMove{
+    0%{background-position:0% 50%;}
+    100%{background-position:300% 50%;}
+}
